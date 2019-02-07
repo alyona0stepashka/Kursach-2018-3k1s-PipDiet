@@ -1,0 +1,93 @@
+﻿<Window x:Class="PipDiet.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:PipDiet"
+        mc:Ignorable="d"
+        Title="Registration"  Style="{StaticResource TitleStyle}" Background="Transparent" AllowsTransparency="True" Height="510" Width="544.795" FontSize="20" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0.4,0.4">
+        <Border Background="#FFFCF0E4" CornerRadius="20" Margin="20,20,10.4,102.4">
+            <DockPanel>
+                <StackPanel Margin="15,15,20,94" Width="224">
+                    <Label ToolTip="Регистрация" Content="Registration" Foreground="#FF313937" FontSize="30" HorizontalAlignment="Center" FontFamily="Nautilus Pompilius" Margin="42,0,10,0" Width="172" Padding="22,5,0,5"/>
+                    <Label ToolTip="Логин" FontFamily="PG Isadora Cyr Pro" Content="Username" FontSize="20" Foreground="#FF313937" Height="39" VerticalContentAlignment="Bottom" Margin="28,10,10.4,0" />
+                    <TextBox ToolTip="Имя пользователя" x:Name="txtusername" Background="#696969" Foreground="#FFF7F7F7" FontSize="18" FontFamily="Nautilus Pompilius"/>
+                    <Label ToolTip="Пароль (&gt;2 символов)" FontFamily="PG Isadora Cyr Pro" Content="Password" FontSize="20" Foreground="#FF313937" Height="40" VerticalContentAlignment="Bottom" Margin="28,0,0.4,0"/>
+                    <PasswordBox ToolTip="Пароль" x:Name="txtpassword" Background="#696969" Foreground="#FFF7F7F7" FontSize="18" FontFamily="Nautilus Pompilius" />
+                    <Label ToolTip="Возраст (полных лет)" FontFamily="PG Isadora Cyr Pro" Content="Age" FontSize="20" Foreground="#FF313937"  Height="39" VerticalContentAlignment="Bottom" Margin="28,0,0.4,0"/>
+                    <TextBox PreviewTextInput="txtfrostid_PreviewTextInput" ToolTip="Возраст (полных лет)" x:Name="txtage" Background="#696969" Foreground="#FFF7F7F7" FontSize="18" FontFamily="Nautilus Pompilius"  />
+
+                </StackPanel>
+                <StackPanel Margin="15,65,15,94" Width="224">
+
+                    <Label ToolTip="Ваш пол" FontFamily="PG Isadora Cyr Pro" Content="Sex" FontSize="20" Foreground="#FF313937" Height="39" VerticalContentAlignment="Bottom" Margin="28,2,10.4,0" />
+                    <RadioButton x:Name="rbfem"  Content="Female" FontFamily="PG Isadora Cyr Pro" FontSize="16" Foreground="#FF313937" Margin="0 3" />
+                    <RadioButton x:Name="rbmale" Content="Male" FontFamily="PG Isadora Cyr Pro" FontSize="16" Foreground="#FF313937"/>
+                    <Label ToolTip="Рост (см)" FontFamily="PG Isadora Cyr Pro" Content="Growth" FontSize="20" Foreground="#FF313937" Height="35" VerticalContentAlignment="Bottom" Margin="28,0,0,0"/>
+                    <TextBox ToolTip="Рост (см)" x:Name="txtgrowth" Background="#696969" Foreground="#FFF7F7F7" FontSize="18" FontFamily="Nautilus Pompilius" />
+                    <Label ToolTip="Настоящий вес (кг)" FontFamily="PG Isadora Cyr Pro" Content="Weight" FontSize="20" Foreground="#FF313937"  Height="39" VerticalContentAlignment="Bottom" Margin="28,0,0.4,0"/>
+                    <TextBox PreviewTextInput="txtfrostid_PreviewTextInput" ToolTip="Ваш настоящий вес (кг)" x:Name="txtweight" Background="#696969" Foreground="#FFF7F7F7" FontSize="18" FontFamily="Nautilus Pompilius"  />
+
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <Image ToolTip="Свернуть в трей" MouseLeftButtonDown="Image_MouseLeftButtonDown_1" Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/hide2.png" Height="25" Margin="473,28,45.4,457" />
+        <Image  gif:ImageBehavior.AnimatedSource="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/test/25.gif" Margin="35,28,442.4,418"/>
+        <Label Margin="35,81,429.4,418.4" Background="#FAEEE2"/>
+        <Image ToolTip="Закрыть" MouseLeftButtonDown="Image_MouseLeftButtonDown" Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/cross3.png" Height="25" Width="30" Margin="504,28,10.4,457" RenderTransformOrigin="6.814,0.402" />
+        <Image MouseLeftButtonDown="Image_MouseLeftButtonDown_2" Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/return.png" Height="25" Margin="527,27,87.4,458.4" />
+        <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/u.png" Margin="35,102,484.4,382" Width="25"/>
+        <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/p.png" Margin="35,169,484.4,316" Width="25"/>
+        <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/sex.png" Width="25" Margin="300,-146,220.4,145" Height="25"/>
+        <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/growth.png" Width="25" Height="25" Margin="300,169,219.4,316"/>
+            <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/weight.png" Width="25" Height="25" Margin="300,234,219.4,251"/>
+            <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/home.png" Margin="35,234,484.4,251" Width="25"/>
+        <Separator Margin="35,8,34,335" Height="0.8"/>
+        <Separator Height="1" Margin="97,325,97.4,184.4"/>
+        <Button x:Name="btnGoRegister" ToolTip="Нажмите, чтобы подтвердить регистрацию и войти" 
+                    Click="btnGoRegister_Click" 
+                    Background="#CE8A8A" 
+                    Foreground="#FFFFFF" 
+                    FontSize="24" 
+                    FontFamily="PG Isadora Cyr Pro"
+                    Content="Registration" Height="41" Margin="35,349,21.4,120.4"/>
+        <!--<TextBlock IsHitTestVisible="False" Text="username..." VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF969594" FontSize="18" Width="228" Height="24" Margin="36,124,0,362.4" Padding="6,0,0,0" FontWeight="Thin" FontStyle="Italic">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=txtusername}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBlock IsHitTestVisible="False" Text="id..." VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF969594" FontSize="18" Width="230" Height="24" Margin="36,255,0,231.4" Padding="6,0,0,0" FontWeight="Thin" FontStyle="Italic" >
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=txtfrostid}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBlock IsHitTestVisible="False" Name="bpassword" Text="password..." VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF969594" FontSize="18" Width="202" Height="24" Margin="36,189,0,297.4" Padding="6,0,0,0" FontWeight="Thin" FontStyle="Italic" >
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Password, ElementName=txtpassword}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>-->
+    </Grid>
+</Window>

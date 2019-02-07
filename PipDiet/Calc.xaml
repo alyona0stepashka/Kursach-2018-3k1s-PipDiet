@@ -1,44 +1,66 @@
-﻿<Window x:Class="PipDiet.MainWindow"
+﻿<Window x:Class="PipDiet.Calc"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
-       xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
         xmlns:local="clr-namespace:PipDiet"
         mc:Ignorable="d"
-        Title="My Profile" WindowStartupLocation="CenterScreen" Style="{StaticResource TitleStyle}">
-
-
+        Title="Calculate kkal"   WindowStartupLocation="CenterScreen" Style="{StaticResource TitleStyle}">
     <Grid>
         <DockPanel>
             <Canvas x:Name="canv" Background="#4B4A43">
-                <Border Background="#FCEFDF" Canvas.Left="71" Canvas.Top="42" Height="541" Width="870">
+                <Border Background="#FCEFDF" Canvas.Left="71" Canvas.Top="21" Height="562" Width="422">
                     <StackPanel>
-                        <Label x:Name="txthello" Content="Hello, user" Height="130" Margin="24,45,276.4,0"  FontSize="90" 
-                                           FontFamily="Nautilus Pompilius" Foreground="#FF484747"/>
-                        <Border Background="#D8696969" Height="263" Margin="31,84,29.4,10">
+                        <Border Background="#696969" Height="165" Margin="10,10,10.4,10">
                             <StackPanel Margin="10,0,14,-0.4">
-                                <Label ToolTip="Выбрать продукт" Foreground="#FFFCC1C1" Content="Kkal for less weight : " FontSize="36" 
-                                           FontFamily="Nautilus Pompilius" Margin="10,6,9.2,0" x:Name="txtless"/>
-                                <Separator Height="2" Foreground="#FFF0F0F0" Margin="10,2,9.6,2"/>
-                                <Label ToolTip="Количество в граммах" Foreground="#FFC4D9FC" Content="Kkal for current weight : " FontSize="36"
-                                           FontFamily="Nautilus Pompilius" Margin="10,-3,0.2,0" x:Name="txtnorm" />
-                                <Separator Height="2" Foreground="#FFF0F0F0" Margin="10,2,9.6,2"/>
-                                <Label ToolTip="Результат" Foreground="#FFFCC1C1" Content="Kkal for more weight : " FontSize="36" 
-                                           FontFamily="Nautilus Pompilius" Margin="10,-3,0.2,0"  x:Name="txtmore"/>
-                                <Separator Height="2" Foreground="#FFF0F0F0" Margin="10,2,9.6,2"/>
-
-                                <Label ToolTip="Выбрать продукт" Foreground="#FFFBF9BB" Content="Ideal Weight : " FontSize="36" 
-                                           FontFamily="Nautilus Pompilius" Margin="10,6,0.2,0" x:Name="txtidealw" Background="#FF807E7B"/>
-
+                                <DockPanel Margin="-8,0,-21.4,0">
+                                    <Label ToolTip="Выбрать продукт" Foreground="#F3F3F3" Content="Choose product : " FontSize="25" FontFamily="Nautilus Pompilius" Margin="6,9,199,0" Width="175" />
+                                    <TextBox IsReadOnly="True"   Background="DimGray" TextWrapping="Wrap" ToolTip="Выберите продукт" x:Name="txtprod" RenderTransformOrigin="0.5,0.5" Width="193" Height="30" Margin="-211,0,0,-2" FontSize="18" VerticalContentAlignment="Bottom" FontFamily="Nautilus Pompilius" Foreground="#F3F3F3"/>
+                                </DockPanel>
+                                <DockPanel Margin="-8,0,-0.4,0">
+                                    <Label ToolTip="Количество в граммах" Foreground="#F3F3F3" Content="Amount(g) : " FontSize="25" FontFamily="Nautilus Pompilius" Margin="10,8,199,0" />
+                                    <TextBox PreviewTextInput="amount_PreviewTextInput" ToolTip="Кол-во в граммах" x:Name="amount" Text="" Width="193" Margin="-153,0,0,2" Height="30" FontSize="18" VerticalContentAlignment="Bottom" Foreground="#D8000000"/>
+                                </DockPanel>
+                                <DockPanel Margin="-8,0,-0.4,0">
+                                    <Label ToolTip="Результат" Foreground="#F3F3F3" Content="Result(kkal) : " FontSize="25" FontFamily="Nautilus Pompilius" Margin="10,8,199,0" />
+                                    <Label x:Name="calc" Content="..." Width="84" Margin="-252,-1,0,-6" Height="35" FontSize="25" FontFamily="Nautilus Pompilius" Foreground="#F3F3F3" VerticalContentAlignment="Center" />
+                                    <Button x:Name="btncalc" Click="btncalc_Click" Width="40" Height="40" Margin="-17,0,0,0" Background="White" >
+                                        <Image ToolTip="Подсчитать" Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/calculate.png" Width="35" Height="35"/>
+                                    </Button>
+                                </DockPanel>
                             </StackPanel>
                         </Border>
+                        <StackPanel Orientation="Horizontal" Margin="0 30 0 0"/>
+                        <Image gif:ImageBehavior.AnimatedSource="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/test/20.gif" Height="329" Margin="23,-8,17.4,0" />
                     </StackPanel>
                 </Border>
                 <Border Margin="510 10 10 10">
-                    <StackPanel/>
+                    <StackPanel>
+                        <Border Background="#696969" Height="538" Margin="0,35,0,0" Width="442">
+                            <Grid>
+                                <DataGrid FontSize="20"  Foreground="#D8000000" FontFamily="Nautilus Pompilius" x:Name="datagrid_products"
+                                          Style="{StaticResource DatagridStyle}" Loaded="datagrid_products_Loaded"  IsReadOnly="True"
+                                          AutoGenerateColumns="False"  MouseDoubleClick="datagrid_products_MouseDoubleClick" MouseLeftButtonDown="datagrid_products_MouseDoubleClick" MouseDown="datagrid_products_MouseDoubleClick">
+                                    <DataGrid.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="White" Offset="0"/>
+                                            <GradientStop Color="#FFFCF0E2" Offset="0.694"/>
+                                            <GradientStop Color="#FFF7DAB8" Offset="0.986"/>
+                                        </LinearGradientBrush>
+                                    </DataGrid.Background>
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Product" Width="7*" 
+                             Binding="{Binding Name}"/>
+                                        <DataGridTextColumn Header="Kkal/100g"  Width="4*"
+                             Binding="{Binding Kkal}"/>
+                                    </DataGrid.Columns>
+
+                                </DataGrid>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
                 </Border>
                 <StackPanel  Style="{StaticResource MenuEvent}">
                     <DockPanel VerticalAlignment='Center' HorizontalAlignment="Center">
@@ -88,7 +110,7 @@
                                Width="150" 
                                Foreground="#313937"/>
                         <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/calculate.png" Width="35" Height="35"/>
-                    </DockPanel> 
+                    </DockPanel>
                     <DockPanel VerticalAlignment='Center' x:Name="dockAdmin" HorizontalAlignment="Center">
                         <Label x:Name="label177" 
                                FontFamily="PG Isadora Cyr Pro"
@@ -126,13 +148,18 @@
                         <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/log_in.png" Width="35" Height="35"/>
                     </DockPanel>
                 </StackPanel>
+                <Border Background="#556371" >
+                    <Grid>
+
+
+                    </Grid>
+                </Border>
+                <Label ToolTip="Все продукты" Foreground="#F3F3F3" Content="All products:" Canvas.Left="510" Width="136"
+                       FontFamily="Nautilus Pompilius" FontSize="24" Canvas.Top="10" Height="34" Padding="5,5,5,0" Background="#FF4B4A43" Margin="0,2,0,0" />
             </Canvas>
         </DockPanel>
+        <Label Margin="234,541,640,35" Background="#FFFCEFDF"/>
         <Image ToolTip="Свернуть в трей" MouseLeftButtonDown="Image_MouseLeftButtonDown_1" Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/hide2.png" Height="25" Margin="922,0,28,575" />
         <Image ToolTip="Закрыть" MouseLeftButtonDown="Image_MouseLeftButtonDown" Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/cross3.png" Height="25" Width="25" Margin="942,0,0,575" />
-        <Image gif:ImageBehavior.AnimatedSource="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/test/3.gif" Margin="617,47,58,306" />
-        <!--<WindowsFormsHost Margin="102,224,58,42">
-            <rv:ReportViewer Load="Rep1_Load" x:Name="rep1"/>
-        </WindowsFormsHost>-->
     </Grid>
 </Window>

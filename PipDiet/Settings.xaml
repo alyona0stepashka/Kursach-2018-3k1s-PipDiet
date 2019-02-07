@@ -1,45 +1,20 @@
-﻿<Window x:Class="PipDiet.MainWindow"
+﻿<Window x:Class="PipDiet.Settings"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
-        xmlns:gif="http://wpfanimatedgif.codeplex.com"
-       xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
         xmlns:local="clr-namespace:PipDiet"
-        mc:Ignorable="d"
-        Title="My Profile" WindowStartupLocation="CenterScreen" Style="{StaticResource TitleStyle}">
+       xmlns:gif="http://wpfanimatedgif.codeplex.com"
 
+        mc:Ignorable="d"
+        Title="Settings"   WindowStartupLocation="CenterScreen" Style="{StaticResource TitleStyle}" >
 
     <Grid>
+
         <DockPanel>
-            <Canvas x:Name="canv" Background="#4B4A43">
-                <Border Background="#FCEFDF" Canvas.Left="71" Canvas.Top="42" Height="541" Width="870">
-                    <StackPanel>
-                        <Label x:Name="txthello" Content="Hello, user" Height="130" Margin="24,45,276.4,0"  FontSize="90" 
-                                           FontFamily="Nautilus Pompilius" Foreground="#FF484747"/>
-                        <Border Background="#D8696969" Height="263" Margin="31,84,29.4,10">
-                            <StackPanel Margin="10,0,14,-0.4">
-                                <Label ToolTip="Выбрать продукт" Foreground="#FFFCC1C1" Content="Kkal for less weight : " FontSize="36" 
-                                           FontFamily="Nautilus Pompilius" Margin="10,6,9.2,0" x:Name="txtless"/>
-                                <Separator Height="2" Foreground="#FFF0F0F0" Margin="10,2,9.6,2"/>
-                                <Label ToolTip="Количество в граммах" Foreground="#FFC4D9FC" Content="Kkal for current weight : " FontSize="36"
-                                           FontFamily="Nautilus Pompilius" Margin="10,-3,0.2,0" x:Name="txtnorm" />
-                                <Separator Height="2" Foreground="#FFF0F0F0" Margin="10,2,9.6,2"/>
-                                <Label ToolTip="Результат" Foreground="#FFFCC1C1" Content="Kkal for more weight : " FontSize="36" 
-                                           FontFamily="Nautilus Pompilius" Margin="10,-3,0.2,0"  x:Name="txtmore"/>
-                                <Separator Height="2" Foreground="#FFF0F0F0" Margin="10,2,9.6,2"/>
+            <Canvas x:Name="canv" Background="#FF4B4A43">
+                <Label  Background="#FF4B4A43"  Content="Create &#10;your own &#10;style!" Foreground="#FFEBE8E4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="84" Canvas.Left="107" Canvas.Top="146" Width="441" Padding="13,5,5,5" Height="303"/>
 
-                                <Label ToolTip="Выбрать продукт" Foreground="#FFFBF9BB" Content="Ideal Weight : " FontSize="36" 
-                                           FontFamily="Nautilus Pompilius" Margin="10,6,0.2,0" x:Name="txtidealw" Background="#FF807E7B"/>
-
-                            </StackPanel>
-                        </Border>
-                    </StackPanel>
-                </Border>
-                <Border Margin="510 10 10 10">
-                    <StackPanel/>
-                </Border>
                 <StackPanel  Style="{StaticResource MenuEvent}">
                     <DockPanel VerticalAlignment='Center' HorizontalAlignment="Center">
                         <Label x:Name="label1" 
@@ -88,7 +63,7 @@
                                Width="150" 
                                Foreground="#313937"/>
                         <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/calculate.png" Width="35" Height="35"/>
-                    </DockPanel> 
+                    </DockPanel>
                     <DockPanel VerticalAlignment='Center' x:Name="dockAdmin" HorizontalAlignment="Center">
                         <Label x:Name="label177" 
                                FontFamily="PG Isadora Cyr Pro"
@@ -126,13 +101,21 @@
                         <Image Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/log_in.png" Width="35" Height="35"/>
                     </DockPanel>
                 </StackPanel>
+                <Border Background="#556371" >
+                    <Grid/>
+                </Border>
+
             </Canvas>
         </DockPanel>
+        <Button ToolTip="Выбрать изображение" Content="Load image" Click="Button_Click" Width="250" Height="50" Foreground="#FF595959" FontSize="20" FontFamily="SketchFlow Print" Margin="604,166,118,384"/>
+        <Label Content="or" Width="200" Height="50" Foreground="#CFCFCF" Margin="634,221,138,329" FontSize="20" FontFamily="SketchFlow Print" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button ToolTip="Выбрать цвет" Content="Choose color" Click="Button_Click_1" Width="250" Height="50" Foreground="#FF595959" FontSize="20" FontFamily="SketchFlow Print" Margin="604,276,118,274"/>
         <Image ToolTip="Свернуть в трей" MouseLeftButtonDown="Image_MouseLeftButtonDown_1" Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/hide2.png" Height="25" Margin="922,0,28,575" />
         <Image ToolTip="Закрыть" MouseLeftButtonDown="Image_MouseLeftButtonDown" Source="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/icons/cross3.png" Height="25" Width="25" Margin="942,0,0,575" />
-        <Image gif:ImageBehavior.AnimatedSource="D:/Study/3k1s/Kursach/PipDiet/PipDiet/_images/test/3.gif" Margin="617,47,58,306" />
-        <!--<WindowsFormsHost Margin="102,224,58,42">
-            <rv:ReportViewer Load="Rep1_Load" x:Name="rep1"/>
-        </WindowsFormsHost>-->
+        <Button ToolTip="Стандартное оформление" Content="Use basic style" Click="Button_Click_2" Width="250" Height="50" Foreground="#FF595959" FontSize="20" FontFamily="SketchFlow Print" Margin="604,381,118,169"/>
+        <Label Content="or" Width="200" Height="50" Foreground="#CFCFCF" Margin="634,331,138,219" FontSize="20" FontFamily="SketchFlow Print" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+
     </Grid>
 </Window>
+

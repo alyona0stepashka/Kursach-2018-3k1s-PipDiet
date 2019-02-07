@@ -34,8 +34,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -45,15 +53,89 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.17\lib\net\WpfAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddDiet.xaml.cs">
+      <DependentUpon>AddDiet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calc.xaml.cs">
+      <DependentUpon>Calc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationWindow.xaml.cs">
+      <DependentUpon>NotificationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="_classes\BGBuilder.cs" />
+    <Compile Include="_classes\Diet.cs" />
+    <Compile Include="_classes\DietInfo.cs" />
+    <Compile Include="_classes\Meal.cs" />
+    <Compile Include="_classes\Metadata.cs" />
+    <Compile Include="_classes\Product.cs" />
+    <Compile Include="_classes\ProductInfo.cs" />
+    <Compile Include="_classes\Resource.cs" />
+    <Compile Include="_classes\User.cs" />
+    <Page Include="AddDiet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotificationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,6 +167,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +175,128 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_images\background\10.jpg" />
+    <Resource Include="_images\background\11.jpeg" />
+    <Resource Include="_images\background\12.jpg" />
+    <Resource Include="_images\background\13.jpg" />
+    <Resource Include="_images\background\19.jpg" />
+    <Resource Include="_images\background\2.jpg" />
+    <Resource Include="_images\background\3.jpg" />
+    <Resource Include="_images\background\36.jpg" />
+    <Resource Include="_images\background\5.jpg" />
+    <Resource Include="_images\background\553531-1680x1050.jpg" />
+    <Resource Include="_images\background\6.jpg" />
+    <Resource Include="_images\background\9.jpg" />
+    <Resource Include="_images\background\img.jpg" />
+    <Resource Include="_images\background\JO-4TwJdBSQ.jpg" />
+    <Resource Include="_images\i.ico" />
+    <Resource Include="_images\icons\1.ico" />
+    <Resource Include="_images\icons\1.png" />
+    <Resource Include="_images\icons\about.png" />
+    <Resource Include="_images\icons\add.png" />
+    <Resource Include="_images\icons\buy.png" />
+    <Resource Include="_images\icons\calculate.png" />
+    <Resource Include="_images\icons\chat.png" />
+    <Resource Include="_images\icons\chef.png" />
+    <Resource Include="_images\icons\chef.png_64.png" />
+    <Resource Include="_images\icons\cross.png" />
+    <Resource Include="_images\icons\cross2.png" />
+    <Resource Include="_images\icons\cross3.png" />
+    <Resource Include="_images\icons\email.png" />
+    <Resource Include="_images\icons\get_recipe.png" />
+    <Resource Include="_images\icons\hide.png" />
+    <Resource Include="_images\icons\hide2.png" />
+    <Resource Include="_images\icons\home.png" />
+    <Resource Include="_images\icons\i.ico" />
+    <Resource Include="_images\icons\i.png" />
+    <Resource Include="_images\icons\icon.png" />
+    <Resource Include="_images\icons\icon_64.png" />
+    <Resource Include="_images\icons\insta.png" />
+    <Resource Include="_images\icons\log.png" />
+    <Resource Include="_images\icons\log_in.png" />
+    <Resource Include="_images\icons\log_out.png" />
+    <Resource Include="_images\icons\more.png" />
+    <Resource Include="_images\icons\new_user.png" />
+    <Resource Include="_images\icons\new_user.png_64.png" />
+    <Resource Include="_images\icons\p.png" />
+    <Resource Include="_images\icons\p.png_64.png" />
+    <Resource Include="_images\icons\p1.ico" />
+    <Resource Include="_images\icons\p1.png" />
+    <Resource Include="_images\icons\pass.png" />
+    <Resource Include="_images\icons\pass.png_64.png" />
+    <Resource Include="_images\icons\phone.png" />
+    <Resource Include="_images\icons\Pusheen_Love.ico" />
+    <Resource Include="_images\icons\quest.png" />
+    <Resource Include="_images\icons\question.png" />
+    <Resource Include="_images\icons\question.png_16.png" />
+    <Resource Include="_images\icons\ref.png" />
+    <Resource Include="_images\icons\ref.png_64.png" />
+    <Resource Include="_images\icons\refresh.png" />
+    <Resource Include="_images\icons\return.png" />
+    <Resource Include="_images\icons\scroll.png" />
+    <Resource Include="_images\icons\search.png" />
+    <Resource Include="_images\icons\search1.png" />
+    <Resource Include="_images\icons\search1.png_64.png" />
+    <Resource Include="_images\icons\search2.png" />
+    <Resource Include="_images\icons\search2.png_32.png" />
+    <Resource Include="_images\icons\settings.png" />
+    <Resource Include="_images\icons\Settings1.png" />
+    <Resource Include="_images\icons\settings2.png" />
+    <Resource Include="_images\icons\shop.png" />
+    <Resource Include="_images\icons\shop2%282%29.png" />
+    <Resource Include="_images\icons\shop2.png" />
+    <Resource Include="_images\icons\skype.png" />
+    <Resource Include="_images\icons\telegram.png" />
+    <Resource Include="_images\icons\twitter.png" />
+    <Resource Include="_images\icons\u.png" />
+    <Resource Include="_images\icons\u.png_64.png" />
+    <Resource Include="_images\icons\unbuy.png" />
+    <Resource Include="_images\icons\user.png" />
+    <Resource Include="_images\icons\user.png_64.png" />
+    <Resource Include="_images\icons\vk.png" />
+    <Resource Include="_images\icons\wcross3.png" />
+    <Resource Include="_images\quest\1.PNG" />
+    <Resource Include="_images\quest\2.PNG" />
+    <Resource Include="_images\quest\31.PNG" />
+    <Resource Include="_images\quest\32.PNG" />
+    <Resource Include="_images\quest\4.PNG" />
+    <Resource Include="_images\quest\5.PNG" />
+    <Resource Include="_images\quest\6.PNG" />
+    <Resource Include="_images\quest\7.PNG" />
+    <Resource Include="_images\quest\8.PNG" />
+    <Resource Include="_images\test\0.gif" />
+    <Resource Include="_images\test\1.gif" />
+    <Resource Include="_images\test\10.gif" />
+    <Resource Include="_images\test\11.gif" />
+    <Resource Include="_images\test\12.gif" />
+    <Resource Include="_images\test\13.gif" />
+    <Resource Include="_images\test\14.gif" />
+    <Resource Include="_images\test\15.gif" />
+    <Resource Include="_images\test\16.gif" />
+    <Resource Include="_images\test\17.gif" />
+    <Resource Include="_images\test\18.gif" />
+    <Resource Include="_images\test\19.gif" />
+    <Resource Include="_images\test\2.gif" />
+    <Resource Include="_images\test\20.gif" />
+    <Resource Include="_images\test\21.gif" />
+    <Resource Include="_images\test\22.gif" />
+    <Resource Include="_images\test\23.gif" />
+    <Resource Include="_images\test\24.gif" />
+    <Resource Include="_images\test\25.gif" />
+    <Resource Include="_images\test\251.gif" />
+    <Resource Include="_images\test\3.gif" />
+    <Resource Include="_images\test\4.gif" />
+    <Resource Include="_images\test\5.gif" />
+    <Resource Include="_images\test\6.gif" />
+    <Resource Include="_images\test\7.gif" />
+    <Resource Include="_images\test\8.gif" />
+    <Resource Include="_images\test\9.gif" />
+    <Resource Include="_images\test\cat.gif" />
+    <Resource Include="_images\test\Pusheen.gif" />
+    <Resource Include="_images\test\Pusheen_Love.png" />
+    <Resource Include="_images\test\skrep49.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
