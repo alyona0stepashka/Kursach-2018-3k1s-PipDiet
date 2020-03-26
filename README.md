@@ -1,5 +1,5 @@
 # Kursach-2018-3k1s-PipDiet
-My course work (rating 8/10) for subject "Data Bases" with theme "Using SQL Server Reporting Services (SSRS) technology for the calorie Diary task"
+My course work (rating 8/10) for subject "Data Bases" with theme "Using SQL Server Reporting Services (SSRS) technology for the calorie Diary task"<br/>
 <img src="https://sun9-55.userapi.com/c857136/v857136119/137690/DqbUAkNdyRc.jpg"/>
 <img src="https://sun9-60.userapi.com/c857136/v857136119/137698/ePEX5ScvdRA.jpg"/>
 <img src="https://sun9-8.userapi.com/c857136/v857136119/1376a0/BIXCsFtLqiI.jpg"/>
